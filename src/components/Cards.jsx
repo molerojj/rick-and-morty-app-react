@@ -1,9 +1,16 @@
 import Card from './Card';
-import './cards.css';
+import styled from 'styled-components';
+
+const DivCards = styled.div`
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+`;
 
 export default function Cards(props) {
    const { characters } = props;
-   return <div className="cards">
+   return <DivCards>
       {characters.map(e => (
          <Card name={e.name}
                species={e.species}
@@ -12,5 +19,6 @@ export default function Cards(props) {
                onClose={() => window.alert('Emulamos que se cierra la card')}
                />
       ))}
-   </div>;
+   </DivCards>;
 }
+
