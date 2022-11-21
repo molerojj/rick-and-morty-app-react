@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const DivAdd = styled.div`
    margin: 20px;
+   display: flex;
+   justify-content: right;
 `;
 
 const InputAdd = styled.input`
@@ -17,9 +19,9 @@ const InputAdd = styled.input`
 const BtnAdd = styled.button`
    font-family: montserrat;
    font-size: 11px;
-   padding: 3px;
-   background-color: #AD4F43;
-   color: white;
+   padding: 0px 15px;
+   background-color: #cdf567;
+   color: #000;
    border: 1px;
    border-radius: 2px;
    &:hover{
@@ -27,16 +29,25 @@ const BtnAdd = styled.button`
       color: #000;
       border-radius: 2px; solid #AD4F43;
    }
-   -moz-box-shadow: 0px 0px #Fff;
-   -webkit-box-shadow: 0px 0px 30px #Fff;
-   box-shadow: 0px 0px 30px #Fff;      
+   // -moz-box-shadow: 0px 0px #Fff;
+   // -webkit-box-shadow: 0px 0px 30px #Fff;
+   // box-shadow: 0px 0px 30px #Fff;      
 `;
 
 export default function SearchBar(props) {
+
+   const [ character, setCharacter ] = useState(""); // Estado interno del SearchBar
+
+   const handleChange = (e) => { // Funcion que obtiene lo que se ingresa en input y lo setea en el estado.
+      const { value } = e.target;
+      setCharacter(value);
+   }
+
    return (
       <DivAdd>
-         <InputAdd type='search' />
-         <BtnAdd onClick={props.onSearch}>Agregar</BtnAdd>
+         <InputAdd type='search' onChange={handleChange} name="search" id=""/>
+         <BtnAdd onClick={() => props.onSearch(character)}>Agregar</BtnAdd>
+         <BtnAdd onClick={() => props.onSearch(Math.floor(Math.random()*826))}>Random</BtnAdd>
       </DivAdd>
    );
-}
+} 

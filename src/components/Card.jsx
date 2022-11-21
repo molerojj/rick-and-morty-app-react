@@ -12,15 +12,15 @@ const DivCard = styled.div`
    border-radius: 10px;
    margin: 50px;
    -moz-box-shadow: 0px 0px 30px #ffffff;
-      -webkit-box-shadow: 0px 0px 30px #ffffff;
-      box-shadow: 0px 0px 30px #ffffff;
+   -webkit-box-shadow: 0px 0px 30px #ffffff;
+   box-shadow: 0px 0px 30px #ffffff;
       
 `;
 
 const Button = styled.button`
-   background-color: #AD4F43;
+   background-color: #a71e1d;
    color: white;
-   border-radius: 15px;
+   border-radius: 50px;
    border: none;
    margin-left: 80%;
    margin-top: 15px;
@@ -48,11 +48,11 @@ const DivDescription = styled.div`
 `;
 
 
-export default function Card({name, species, gender, image, onClose}) {
+const Card = ({onClose, id, name, species, gender, image}) => {
    return (
       <DivCard>
-         <Button onClick={onClose}>X</Button>
-         <img src={image} alt="" />
+         <Button onClick={() => onClose(id)}>X</Button>
+         <img src={image} alt={name} />
          <H2name>{name}</H2name>
          <DivDescription>
             <h2>{gender}</h2>
@@ -61,3 +61,5 @@ export default function Card({name, species, gender, image, onClose}) {
       </DivCard>
    );
 }
+
+export default Card;

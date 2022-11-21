@@ -9,16 +9,21 @@ const DivCards = styled.div`
 `;
 
 export default function Cards(props) {
-   const { characters } = props;
-   return <DivCards>
-      {characters.map(e => (
-         <Card name={e.name}
-               species={e.species}
-               gender={e.gender}
-               image={e.image}
-               onClose={() => window.alert('Emulamos que se cierra la card')}
-               />
-      ))}
-   </DivCards>;
+   const { characters, onClose } = props;
+   return (
+      <DivCards>
+         {characters.map((char)=> (
+            <Card 
+               key={char.name} 
+               name={char.name}
+               species={char.species}
+               gender={char.gender}
+               image={char.image}
+               id={char.id}
+               onClose={onClose}
+             />
+         ))}
+      </DivCards>
+   );
 }
-
+ 
