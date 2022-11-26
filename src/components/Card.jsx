@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const DivCard = styled.div`
    background-color: white;
-   heigth: auto;
-   width: 330px;
+   heigth: 320px;
+   width: 290px;
    display: flex;
+   margin: 47px;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    border-radius: 10px;
-   margin: 50px;
    -moz-box-shadow: 0px 0px 30px #ffffff;
    -webkit-box-shadow: 0px 0px 30px #ffffff;
    box-shadow: 0px 0px 30px #ffffff;
@@ -34,26 +35,39 @@ const Button = styled.button`
 const H2name = styled.h2`
    color: white;
    font-size: 16px;
-   margin-top: -40px;
-   margin-left: -160px;
    background-color: hwb(0 0% 10%);
    padding: 0px 3px;
    border-radius: 8px;
+   text-align: center;
+   margin-top: -40px;
 `;
 
 const DivDescription = styled.div`
    display: flex;
    flex-direction: row;
-   gap: 3rem;
+   justify-content: center;
+   gap: 2rem;
+   font-size: 13px;
 `;
 
+const Img = styled.img`
+   width: 250px;
+   height: 290px;
+   border-radius: 10px;
+`;
 
-const Card = ({onClose, id, name, species, gender, image}) => {
+const NameLink = styled(Link)`
+   text-decoration: none;
+`;
+
+const Card = ({onClose, id, name, species, gender, image, detailId}) => {
    return (
       <DivCard>
          <Button onClick={() => onClose(id)}>X</Button>
-         <img src={image} alt={name} />
-         <H2name>{name}</H2name>
+         <Img src={image} alt={name}></Img>
+         <NameLink to={`/detail/${id}`}>
+            <H2name>{name}</H2name>
+         </NameLink>
          <DivDescription>
             <h2>{gender}</h2>
             <h2>{species}</h2>

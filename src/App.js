@@ -2,7 +2,10 @@ import './App.css'
 import Cards from './components/Cards.jsx';
 import styled from 'styled-components';
 import Nav from './components/Nav';
+import About from './components/About';
+import Detail from './components/Detail';
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 const DivPrimary = styled.div`
   display: flex;
@@ -38,9 +41,13 @@ const onClose = (id) => {
   return (
     <DivPrimary>
       <Nav onSearch={onSearch} />
-      <Cards characters={characters} onClose={onClose}/>
+      <Routes>
+        <Route exact path="/" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail characters={characters} onClose={onClose} />} />
+      </Routes>
     </DivPrimary>
   );
 }
 
-export default App
+export default App;

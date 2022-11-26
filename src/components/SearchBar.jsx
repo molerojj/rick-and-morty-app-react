@@ -20,18 +20,20 @@ const BtnAdd = styled.button`
    font-family: montserrat;
    font-size: 11px;
    padding: 0px 15px;
-   background-color: #cdf567;
-   color: #000;
+   margin-left: 10px;
+   background-color: #bf2b21;
+   color: #fff;
+   font-weight: bold;
    border: 1px;
-   border-radius: 2px;
-   &:hover{
-      background-color: #fbf976;
-      color: #000;
-      border-radius: 2px; solid #AD4F43;
-   }
-   // -moz-box-shadow: 0px 0px #Fff;
-   // -webkit-box-shadow: 0px 0px 30px #Fff;
-   // box-shadow: 0px 0px 30px #Fff;      
+   border-radius: 3px;
+      &:hover{
+         background-color: #fbf976;
+         color: #000;
+         border-radius: 2px; solid #AD4F43;
+      }
+   -moz-box-shadow: 0px 0px #Fff;
+   -webkit-box-shadow: 0px 0px 30px #Fff;
+   box-shadow: 0px 0px 30px #Fff;      
 `;
 
 export default function SearchBar(props) {
@@ -45,7 +47,7 @@ export default function SearchBar(props) {
 
    return (
       <DivAdd>
-         <InputAdd type='search' onChange={handleChange} name="search" id=""/>
+         <InputAdd type='search' placeholder="Type a number from 1 to 826" onChange={handleChange} name="search" id=""/>
          <BtnAdd onClick={() => props.onSearch(character)}>Agregar</BtnAdd>
          <BtnAdd onClick={() => props.onSearch(Math.floor(Math.random()*826))}>Random</BtnAdd>
       </DivAdd>
