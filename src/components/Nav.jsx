@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
 const NavBar = styled.div`
-    background-color: #ccda8d;
+    background-color: #cbfca5;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -26,19 +26,12 @@ const NavHome = styled(Link)`
     font-weight: bold;
 `;
 
-const NavAbout = styled(Link)`
-    text-decoration: none;
-    color: #be2421;
-    margin: 20px;
-    font-weight: bold;
-`;
-
 export default function Nav(props){
     return(
         <NavBar>
             <HomeAbout>
                 <NavHome to="/">Home</NavHome>
-                <NavAbout to="/about">About</NavAbout>
+                <NavHome to="/about">About</NavHome>
             </HomeAbout>
             <SearchBar onSearch={props.onSearch}/>
         </NavBar>

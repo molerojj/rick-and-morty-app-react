@@ -17,19 +17,16 @@ const InputAdd = styled.input`
 `;
 
 const BtnAdd = styled.button`
-   font-family: montserrat;
-   font-size: 11px;
+   font-size: 12px;
    padding: 0px 15px;
    margin-left: 10px;
    background-color: #bf2b21;
    color: #fff;
-   font-weight: bold;
    border: 1px;
-   border-radius: 3px;
+   border-radius: 25px;
       &:hover{
          background-color: #fbf976;
          color: #000;
-         border-radius: 2px; solid #AD4F43;
       }
    -moz-box-shadow: 0px 0px #Fff;
    -webkit-box-shadow: 0px 0px 30px #Fff;

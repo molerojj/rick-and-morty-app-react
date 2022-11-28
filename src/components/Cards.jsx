@@ -5,13 +5,15 @@ const DivCards = styled.div`
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
-   padding: 50px;
+   padding: 0px 50px;
+   margin: 0;
 `;
 
 const H1home = styled.h1`
    color: white;
    font-size: 3rem;
-   padding-top: 50px;
+   padding-top: 90px;
+   margin: 0;
    text-shadow: 0 0 0.2em #fff, 0 0 0.2em #b2fc37, 0 0 0.2em #b2fc37;
 `;
 
