@@ -66,7 +66,7 @@ const Form = (props) => {
         password: '', 
     });
 
-    const [errors, setErrors] = React.useState([]);
+    const [errors, setErrors] = React.useState({});
 
     const handleInputChange = (e) => {
         setUserData({
@@ -81,14 +81,15 @@ const Form = (props) => {
             }))
     }
 
-    const handleSubmit = (userData) => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         props.login(userData);
     }
 
     return (
         <DivForm>
             <H1Form>Login</H1Form>
-            <form onChange={handleSubmit}>
+            <form onSubmit={handleSubmit}>
             <DivInputs>
                 <Labels>Username</Labels>
                 <Inputs name="username" onChange={handleInputChange} value={userData.username} type="email"/>

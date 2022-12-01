@@ -5,7 +5,7 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Detail from './components/Detail';
 import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Form from './components/Form';
 
 const DivPrimary = styled.div`
@@ -19,7 +19,12 @@ const DivPrimary = styled.div`
 
 function App () {
 
-const [ characters, setCharacters ] = useState([]);
+  const [ characters, setCharacters ] = useState([]);
+  const navigate = useNavigate();
+  const [access, setAccess] = useState(false);
+  const username = 'molerojj@gmail.com';
+  const password = 'sdownsie2';
+  const location = useLocation();
 
 function onSearch(character) {
   fetch(`https://rickandmortyapi.com/api/character/${character}`)
@@ -39,28 +44,32 @@ const onClose = (id) => {
   );
 };
 
-const navigate = useNavigate();
-const [access, setAccess] = useState(false);
-const username = 'molerojj@gmail.com';
-const password = 'sdownsie2';
-
 function login (userData) {
    if (userData.password === password && userData.username === username) {
       setAccess(true);
       navigate('/home');
+   } else {
+      alert('La contraseña es incorrecta')
    }
 }
 
+function logout () {
+  setAccess(false);
+  navigate("/");
+}
+
+/* eslint-disable */
 useEffect(() => {
   !access && navigate("/");
 }, [access]);
+/* eslint-disable */
 
   return (
     <DivPrimary>
-        <Nav onSearch={onSearch} />
+        {location.pathname !== "/" && <Nav onSearch={onSearch} logout={logout} />}
       <Routes>
-        <Route exact path="/" element={<Cards characters={characters} onClose={onClose} />} />
-        <Route path="/login" element={<Form login={login}/>} />
+        <Route exact path="/" element={<Form login={login}/>} />
+        <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail characters={characters} onClose={onClose} />} />
       </Routes>

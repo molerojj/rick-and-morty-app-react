@@ -26,14 +26,14 @@ const NavHome = styled(Link)`
     font-weight: bold;
 `;
 
-export default function Nav(props){
+export default function Nav (props){
     return(
         <NavBar>
             <HomeAbout>
-                <NavHome to="/">Home</NavHome>
+                <NavHome to="/home">Home</NavHome>
                 <NavHome to="/about">About</NavHome>
             </HomeAbout>
-            <SearchBar onSearch={props.onSearch}/>
+            <SearchBar onSearch={props.onSearch} logout={props.logout}/>
         </NavBar>
     )
 }
