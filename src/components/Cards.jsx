@@ -10,11 +10,11 @@ const DivCards = styled.div`
 `;
 
 const H1home = styled.h1`
-   color: white;
+   color: #4e4e4e
    font-size: 3rem;
-   padding-top: 90px;
+   font-weight: 400;
+   padding-top: 80px;
    margin: 0;
-   text-shadow: 0 0 0.2em #fff, 0 0 0.2em #b2fc37, 0 0 0.2em #b2fc37;
 `;
 
 export default function Cards(props) {

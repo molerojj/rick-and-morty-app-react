@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 const DivCard = styled.div`
-   background-color: white;
    heigth: 320px;
    width: 290px;
    display: flex;
@@ -14,24 +13,39 @@ const DivCard = styled.div`
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   border-radius: 10px;
-   -moz-box-shadow: 0px 0px 30px #ffffff;
-   -webkit-box-shadow: 0px 0px 30px #ffffff;
-   box-shadow: 0px 0px 30px #ffffff;
-      
+   border-radius: 30px;
+   background: #e0e0e0;
+   box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+`;
+
+const Buttons = styled.div`
+   display: flex;
+   margin: 20px;
+   justify-content: flex-end;
 `;
 
 const Button = styled.button`
-   background-color: #a71e1d;
-   color: white;
-   border-radius: 50px;
-   border: none;
-   margin-left: 80%;
-   margin-bottom: 15px;
-   &:hover{
-      background-color: #fbf976;
-      color: #000;
+   font-family: 'Poppins', sans-serif;
+   color: #090909;
+   margin-left: 150px;
+   padding: 0.4em 0.8em;
+   font-size: 18px;
+   border-radius: 0.5em;
+   background: #e8e8e8;
+   border: 1px solid #e8e8e8;
+   transition: all .3s;
+   box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+
+   &:hover {
+      border: 1px solid white;
    }
+
+   &:active {
+      box-shadow: 4px 4px 12px #c5c5c5,
+               -4px -4px 12px #ffffff;
+   }         
 `;
 
 const H2name = styled.h2`
@@ -45,6 +59,7 @@ const H2name = styled.h2`
 `;
 
 const DivDescription = styled.div`
+   color: #4e4e4e;
    display: flex;
    flex-direction: row;
    justify-content: center;
@@ -55,7 +70,16 @@ const DivDescription = styled.div`
 const Img = styled.img`
    width: 250px;
    height: 290px;
-   border-radius: 10px;
+   border-radius: 0.5em;
+   background: #e8e8e8;
+   border: 1px solid #e8e8e8;
+   transition: all .3s;
+   box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+
+   &:hover {
+      border: 1px solid white;
+   }
 `;
 
 const NameLink = styled(Link)`
@@ -63,11 +87,24 @@ const NameLink = styled(Link)`
 `;
 
 const ButtonFav = styled.button`
-   border: none;
-   background-color: #eef;
-   margin-right: 80%;
-   margin-top: 15px;
-   border-radius: 20px;
+   color: #090909;
+   padding: 0.3em 0.7em;
+   font-size: 18px;
+   border-radius: 0.5em;
+   background: #e8e8e8;
+   border: 1px solid #e8e8e8;
+   transition: all .3s;
+   box-shadow: 6px 6px 12px #c5c5c5,
+            -6px -6px 12px #ffffff;
+
+   &:hover {
+      border: 1px solid white;
+   }
+
+   &:active {
+      box-shadow: 4px 4px 12px #c5c5c5,
+               -4px -4px 12px #ffffff;
+   }  
 `;
 
 const Card = ({onClose, id, name, species, gender, image, myFavorites, addFavorite, deleteFavorite}) => {
@@ -94,6 +131,7 @@ const Card = ({onClose, id, name, species, gender, image, myFavorites, addFavori
 
    return (
       <DivCard>
+         <Buttons>
          {  isFav ? (
             <ButtonFav onClick={handleFavorite}>❤️</ButtonFav>
             ) : (
@@ -101,6 +139,8 @@ const Card = ({onClose, id, name, species, gender, image, myFavorites, addFavori
             )
          }
          <Button onClick={() => onClose(id)}>X</Button>
+         </Buttons>
+         
          <Img src={image} alt={name}></Img>
          <NameLink to={`/detail/${id}`}>
             <H2name>{name}</H2name>

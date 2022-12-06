@@ -12,15 +12,15 @@ const DivFavs = styled.div`
 `;
 
 const H1Fav = styled.h1`
-   color: white;
-   font-size: 3rem;
-   padding-top: 90px;
-   margin: 0;
-   text-shadow: 0 0 0.2em #fff, 0 0 0.2em #b2fc37, 0 0 0.2em #b2fc37;
+    color: #4e4e4e
+    font-size: 3rem;
+    font-weight: 400;
+    padding-top: 90px;
+    margin: 0;
 `;
 
 
-const Favorites = ({myFavorites}) => {
+const Favorites = ({myFavorites, onClose}) => {
     return(
         <>
         <H1Fav>My Favorites Characters</H1Fav>
@@ -32,6 +32,7 @@ const Favorites = ({myFavorites}) => {
                gender={fav.gender}
                image={fav.image}
                id={fav.id}
+               onClose={onClose}
              />))}
         </DivFavs>
         </>

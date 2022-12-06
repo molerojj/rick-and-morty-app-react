@@ -2,33 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import Imagen from '../img/perfil.png'
 
-const H1about = styled.h1`
-    color: white;
-    font-size: 3rem;
-    padding-top: 80px;
-    margin: 0;
-    text-shadow: 0 0 0.2em #fff, 0 0 0.2em #b2fc37, 0 0 0.2em #b2fc37;
-`;
-
 const H2about = styled.h2`
-    color: white;
+    margin: 100px 0 40px 0;
+    color: #4e4e4e;
     font-size: 20px;
-    margin: 0;
-    padding: 0;
-    text-shadow: 0 0 0.2em #fff, 0 0 0.2em #b2fc37, 0 0 0.2em #fff;    
 `;
 
 const DivAbout = styled.div`
     display: flex;
     border-radius: 20px;
     width: 80%;
-    // padding: 40px 40px 40px;
     justify-content: space-between;
-    margin-top: 20px;
-    background-color: #fff;
-    -moz-box-shadow: 0px 0px 30px #ffffff;
-    -webkit-box-shadow: 0px 0px 30px #ffffff;
-    box-shadow: 0px 0px 30px #ffffff;
+    border-radius: 30px;
+    background: #e0e0e0;
+     box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
 `;
 
 const DivP = styled.div`
@@ -49,7 +37,6 @@ const Img = styled.img`
 export default function About(){
     return (
         <>
-        <H1about>ABOUT RICK & MORTY</H1about>
         <H2about>Por: Jonathan Molero PT10A</H2about>
         <DivAbout>
             <a tittle="perfil" href="https://www.instagram.com/jonathanmolero" target="_blank" rel="noreferrer"><Img src={Imagen} alt="perfil"></Img></a>

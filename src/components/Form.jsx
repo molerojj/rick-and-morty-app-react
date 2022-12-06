@@ -5,43 +5,61 @@ import Validation from "./Validation";
 const DivForm = styled.div`
     text-align: center;
     margin-top: 100px;
-    border-radius: 10px;
     width: 400px;
     heigth: 500px;
-    background-color: rgba(255, 255, 255, 0.8);
-    -moz-box-shadow: 0px 0px 30px #ffffff;
-    -webkit-box-shadow: 0px 0px 30px #ffffff;
-    box-shadow: 0px 0px 30px #ffffff;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
 `;
 
 const Inputs = styled.input`
-    border: 0;
-    border-radius: 2px;
-    width: 180px;
     outline: none;
     text-align: center;
-    margin: -10px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+
+    &:hover {
+        border: 1px solid white;
+    }
+
+    &:active {
+        box-shadow: 4px 4px 12px #c5c5c5,
+                    -4px -4px 12px #ffffff;
+    }
 `;
 
 const Labels = styled.label`
     text-decoration: none;
-    color: #be2421;
-    font-weight: bold;
+    color: #4e4e4e;
+    font-weight: 400;
 `;
 
 const Button = styled.button`
-    background-color: #bf2b21;
-    font-size: 15px;
-    color: white;
-    width: 130px;
-    margin-top: -20px;
-    border: 0;
-    border-radius: 25px;
-    padding: 5px;
-        &:hover{
-            background-color: #fbf976;
-            color: #000;
-     }
+    font-family: 'Poppins', sans-serif;
+    padding: 0px 15px;
+    margin-left: 10px;
+    color: #4e4e4e;
+    font-size: 13px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+
+    &:hover {
+        border: 1px solid white;
+    }
+
+    &:active {
+        box-shadow: 4px 4px 12px #c5c5c5,
+                    -4px -4px 12px #ffffff;
+    }
 `;
 
 const DivInputs = styled.div`
@@ -53,11 +71,11 @@ const DivInputs = styled.div`
 `;
 
 const H1Form = styled.h1`
-   color: white;
-   font-size: 3rem;
-   padding-top: 50px;
-   margin: 0;
-   text-shadow: 0 0 0.2em #fff, 0 0 0.2em #b2fc37, 0 0 0.2em #b2fc37;
+    color: #4e4e4e;
+    font-weight: 400;
+    font-size: 3rem;
+    padding-top: 50px;
+    margin: 0;
 `;
 
 const Form = (props) => {
@@ -97,7 +115,7 @@ const Form = (props) => {
                 <Labels>Password</Labels>
                 <Inputs name="password" onChange={handleInputChange} value={userData.password} type="password" />
                 <p>{errors.password}</p>
-                <Button type="submit">Login</Button>  
+                <Button type="submit">GO!</Button>  
             </DivInputs>
             </form>
         </DivForm>

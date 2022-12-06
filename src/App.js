@@ -73,7 +73,7 @@ useEffect(() => {
         <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail characters={characters} onClose={onClose} />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/favorites" element={<Favorites onClose={onClose}/>} />
       </Routes>
     </DivPrimary>
   );

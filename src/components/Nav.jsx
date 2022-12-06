@@ -4,15 +4,16 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
 const NavBar = styled.div`
-    background-color: #cbfca5;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    -moz-box-shadow: 0px 0px 30px #ffffff;
-    -webkit-box-shadow: 0px 0px 30px #ffffff;
-    box-shadow: 0px 0px 30px #ffffff;
     position:fixed;
     top: 0;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
 `;
 
 const HomeAbout = styled.div`
@@ -21,9 +22,27 @@ const HomeAbout = styled.div`
 
 const NavHome = styled(Link)`
     text-decoration: none;
-    color: #be2421;
+    color: #4e4e4e;
     margin: 20px;
-    font-weight: bold;
+    color: #090909;
+    padding: 0.1em 0.6em;
+    font-size: 13px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+
+    &:hover {
+      border: 1px solid white;
+    }
+
+    &:active {
+      box-shadow: 4px 4px 12px #c5c5c5,
+                  -4px -4px 12px #ffffff;
+   }      
+
 `;
 
 export default function Nav (props){

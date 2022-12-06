@@ -10,46 +10,70 @@ const DivAdd = styled.div`
 
 const InputAdd = styled.input`
    margin-right: 20px;
-   border: 50px;
-   border-radius: 2px;
-   -moz-box-shadow: 0px 0px 30px #ffffff;
-   -webkit-box-shadow: 0px 0px 30px #ffffff;
-   box-shadow: 0px 0px 30px #ffffff;
+   padding-left: 10px;
+   font-size: 11px;
+   width: 190px;
+   border-radius: 0.5em;
+   background: #e8e8e8;
+   border: 1px solid #e8e8e8;
+   transition: all .3s;
+   box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+
+   &:hover {
+      border: 1px solid white;
+   }
+
+   &:active {
+      box-shadow: 4px 4px 12px #c5c5c5,
+               -4px -4px 12px #ffffff;
+   }
 `;
 
 const BtnAdd = styled.button`
-   font-size: 12px;
+   font-family: 'Poppins', sans-serif;
    padding: 0px 15px;
    margin-left: 10px;
-   background-color: #bf2b21;
-   color: #fff;
-   border: 1px;
-   border-radius: 25px;
-      &:hover{
-         background-color: #fbf976;
-         color: #000;
-      }
-   -moz-box-shadow: 0px 0px #Fff;
-   -webkit-box-shadow: 0px 0px 30px #Fff;
-   box-shadow: 0px 0px 30px #Fff;      
+   color: #4e4e4e;
+   font-size: 13px;
+   border-radius: 0.5em;
+   background: #e8e8e8;
+   border: 1px solid #e8e8e8;
+   transition: all .3s;
+   box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+
+   &:hover {
+      border: 1px solid white;
+   }
+
+   &:active {
+      box-shadow: 4px 4px 12px #c5c5c5,
+               -4px -4px 12px #ffffff;
+   }
 `;
 
 const BtnAddF = styled(Link)`
+   color: #4e4e4e;
    text-decoration: none;
-   font-size: 12px;
-   padding: 2px 15px 0px 15px;
+   padding: 0px 15px;
    margin-left: 10px;
-   background-color: #bf2b21;
-   color: #fff;
-   border: 1px;
-   border-radius: 25px;
-      &:hover{
-         background-color: #fbf976;
-         color: #000;
-      }
-   -moz-box-shadow: 0px 0px #Fff;
-   -webkit-box-shadow: 0px 0px 30px #Fff;
-   box-shadow: 0px 0px 30px #Fff;      
+   font-size: 13px;
+   border-radius: 0.5em;
+   background: #e8e8e8;
+   border: 1px solid #e8e8e8;
+   transition: all .3s;
+   box-shadow: 6px 6px 12px #c5c5c5,
+               -6px -6px 12px #ffffff;
+
+   &:hover {
+      border: 1px solid white;
+   }
+
+   &:active {
+      box-shadow: 4px 4px 12px #c5c5c5,
+               -4px -4px 12px #ffffff;
+   }           
 `;
 
 export default function SearchBar(props) {
@@ -66,8 +90,8 @@ export default function SearchBar(props) {
          <InputAdd type='search' placeholder="Type a number from 1 to 826" onChange={handleChange} name="search" id=""/>
          <BtnAdd onClick={() => props.onSearch(character)}>Agregar</BtnAdd>
          <BtnAdd onClick={() => props.onSearch(Math.floor(Math.random()*826))}>Random</BtnAdd>
-         <BtnAdd onClick={props.logout}>Logout</BtnAdd>
          <BtnAddF to="/favorites">Favorites ❤️</BtnAddF>
+         <BtnAdd onClick={props.logout}>Logout</BtnAdd>
       </DivAdd>
    );
 } 
