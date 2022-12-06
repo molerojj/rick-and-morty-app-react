@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Nav from './components/Nav';
 import About from './components/About';
 import Detail from './components/Detail';
+import Favorites from './components/Favorites'
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Form from './components/Form';
@@ -72,9 +73,11 @@ useEffect(() => {
         <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail characters={characters} onClose={onClose} />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </DivPrimary>
   );
 }
+
 
 export default App;

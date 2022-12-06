@@ -63,10 +63,10 @@ export default function About(){
                     aplicar lo aprendido en esta aplicación.</P>
                 
                 <P> <b>Rick & Morty</b> es una aplicación que inicialmente te solicita un login para acceder y luego 
-                    poder ver una serie de Cards de cada personaje que puedes ir agregando mediante un botón 
-                    random el cual selecciona aleatoriamente un ID o mediante un input en el cual puedes 
-                    escribir un ID deseado entre el 1 y el 826 (que son los personajes que nos brinda la API). 
-                    Adicionalmente puedes ver una información mas detallada de cada personaje haciendo clic en 
+                    poder ver una serie de Cards de cada personaje de la serie de tv Rick & Morty que puedes ir agregando mediante un botón 
+                    random el cual selecciona aleatoriamente un personaje mediante un ID o a traves del input en el cual puedes 
+                    escribir el ID de un personaje deseado entre el 1 y el 826 (que son los personajes que nos brinda la API). 
+                    Adicionalmente puedes ver información mas detallada de cada personaje haciendo clic en 
                     su nombre.</P>
 
                 <P> Este App quedará siempre como el recuerdo de esa primera aplicación que desarrollas, traerá 

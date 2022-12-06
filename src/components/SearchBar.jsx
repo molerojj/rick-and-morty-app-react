@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const DivAdd = styled.div`
    margin: 20px;
@@ -33,6 +34,24 @@ const BtnAdd = styled.button`
    box-shadow: 0px 0px 30px #Fff;      
 `;
 
+const BtnAddF = styled(Link)`
+   text-decoration: none;
+   font-size: 12px;
+   padding: 2px 15px 0px 15px;
+   margin-left: 10px;
+   background-color: #bf2b21;
+   color: #fff;
+   border: 1px;
+   border-radius: 25px;
+      &:hover{
+         background-color: #fbf976;
+         color: #000;
+      }
+   -moz-box-shadow: 0px 0px #Fff;
+   -webkit-box-shadow: 0px 0px 30px #Fff;
+   box-shadow: 0px 0px 30px #Fff;      
+`;
+
 export default function SearchBar(props) {
 
    const [ character, setCharacter ] = useState(""); // Estado interno del SearchBar
@@ -48,6 +67,7 @@ export default function SearchBar(props) {
          <BtnAdd onClick={() => props.onSearch(character)}>Agregar</BtnAdd>
          <BtnAdd onClick={() => props.onSearch(Math.floor(Math.random()*826))}>Random</BtnAdd>
          <BtnAdd onClick={props.logout}>Logout</BtnAdd>
+         <BtnAddF to="/favorites">Favorites ❤️</BtnAddF>
       </DivAdd>
    );
 } 

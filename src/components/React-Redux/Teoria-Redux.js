@@ -73,30 +73,7 @@ const initialState = {
 
 // El Reducer (la personita que cambia el estado):
 
-const reducer = (state = initialState, action) => { // recibe dos cosas (Estado "para poder modificarlo") y (Action)
-
-    // if(action.type === "AUMENTAR"){
-    //     return { // No modifica el estado actual, Hace copia y pisa el estado y hace uno nuevo con el estado nuevo.
-    //         ...state,
-    //         num: state.num + 1,
-    //     };
-    // } 
-    // if(action.type === "DECREMENTAR"){
-    //     return { 
-    //         ...state,
-    //         num: state.num - 1,
-    //     };
-    // }
-    // if(action.type === "CAMBIAR_NOMBRE"){
-    //     return {
-    //         ...state,
-    //         name: action.payload,
-    //     }
-    // }
-
-
-    // Aca es donde viene el famoso switch para no usar tantos IF 
-    
+const reducer = (state = initialState, action) => { // recibe dos cosas (Estado "para poder modificarlo") y (Action)    
     switch(action.type){
         case "AUMENTAR":
             return { 
