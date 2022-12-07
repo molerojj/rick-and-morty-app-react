@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Validation from "./Validation";
 
 const DivForm = styled.div`
+    padding: 30px;
     text-align: center;
-    margin-top: 100px;
-    width: 400px;
-    heigth: 500px;
+    margin-top: 120px;
+    width: 250px;
     border-radius: 30px;
     background: #e0e0e0;
     box-shadow: 15px 15px 30px #bebebe,
@@ -14,6 +14,11 @@ const DivForm = styled.div`
 `;
 
 const Inputs = styled.input`
+    color: #5a5a5a;
+    font-size: 11px;
+    margin: 0;
+    padding: 3px;
+    width: 120px;
     outline: none;
     text-align: center;
     border-radius: 0.5em;
@@ -37,12 +42,14 @@ const Labels = styled.label`
     text-decoration: none;
     color: #4e4e4e;
     font-weight: 400;
+    padding-bottom: 5px;
 `;
 
 const Button = styled.button`
     font-family: 'Poppins', sans-serif;
-    padding: 0px 15px;
+    padding: 1px 15px;
     margin-left: 10px;
+    margin-top: 20px;
     color: #4e4e4e;
     font-size: 13px;
     border-radius: 0.5em;
@@ -66,22 +73,32 @@ const DivInputs = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    gap: 1em;
 `;
 
 const H1Form = styled.h1`
+    margin: 0;
+    padding-bottom: 15px;
     color: #4e4e4e;
     font-weight: 400;
     font-size: 3rem;
-    padding-top: 50px;
+`;
+
+const P = styled.p`
+    font-size: 9px;
+    color: red;
+`;
+
+const User = styled.p`
+    font-size: 9px;
+    color: black;
     margin: 0;
+    padding: 0;
 `;
 
 const Form = (props) => {
     const [userData, setUserData] = React.useState({ 
-        username: '', 
-        password: '', 
+        username: '',
+        password: '',
     });
 
     const [errors, setErrors] = React.useState({});
@@ -111,10 +128,12 @@ const Form = (props) => {
             <DivInputs>
                 <Labels>Username</Labels>
                 <Inputs name="username" onChange={handleInputChange} value={userData.username} type="email"/>
-                <p>{errors.username}</p>
+                <P>{errors.username}</P>
                 <Labels>Password</Labels>
                 <Inputs name="password" onChange={handleInputChange} value={userData.password} type="password" />
-                <p>{errors.password}</p>
+                <P>{errors.password}</P>
+                <User>mail: ejemplo@gmail.com</User>
+                <User>pw: password12</User>
                 <Button type="submit">GO!</Button>  
             </DivInputs>
             </form>

@@ -9,9 +9,10 @@ const H2about = styled.h2`
 `;
 
 const DivAbout = styled.div`
+    margin-bottom: 20px;
     display: flex;
     border-radius: 20px;
-    width: 80%;
+    width: 85%;
     justify-content: space-between;
     border-radius: 30px;
     background: #e0e0e0;

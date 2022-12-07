@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { addFavorite, deleteFavorite } from '../redux/actions/actions.js';
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -138,9 +138,8 @@ const Card = ({onClose, id, name, species, gender, image, myFavorites, addFavori
             <ButtonFav onClick={handleFavorite}>🤍</ButtonFav>
             )
          }
-         <Button onClick={() => onClose(id)}>X</Button>
+         {useLocation().pathname !== '/favorites' && <Button onClick={() => onClose(id)}>X</Button>}
          </Buttons>
-         
          <Img src={image} alt={name}></Img>
          <NameLink to={`/detail/${id}`}>
             <H2name>{name}</H2name>

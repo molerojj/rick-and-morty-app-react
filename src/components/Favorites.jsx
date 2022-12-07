@@ -19,7 +19,6 @@ const H1Fav = styled.h1`
     margin: 0;
 `;
 
-
 const Favorites = ({myFavorites, onClose}) => {
     return(
         <>

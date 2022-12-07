@@ -23,17 +23,21 @@ function App () {
   const [ characters, setCharacters ] = useState([]);
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  const username = 'molerojj@gmail.com';
-  const password = 'sdownsie2';
+  const username = 'ejemplo@gmail.com';
+  const password = 'password12';
   const location = useLocation();
 
-function onSearch(character) {
-  fetch(`https://rickandmortyapi.com/api/character/${character}`)
+function onSearch(id) {
+  fetch(`https://rickandmortyapi.com/api/character/${id}`)
      .then((response) => response.json())
      .then((data) => {
         if (data.name) {
-           setCharacters((oldChars) => [...oldChars, data]);
-        } else {
+          if (!characters.find(el => el.id==id))
+            setCharacters((oldChars) => [...oldChars, data]);
+          else
+            window.alert('El personaje con este ID ya se encuentra agregado');
+        } 
+        else {
            window.alert('No hay personajes con ese ID');
         }
      });
