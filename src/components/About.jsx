@@ -42,11 +42,11 @@ export default function About(){
         <DivAbout>
             <a tittle="perfil" href="https://www.instagram.com/jonathanmolero" target="_blank" rel="noreferrer"><Img src={Imagen} alt="perfil"></Img></a>
             <DivP>
-                <P> <b>Rick & Morty</b> es una aplicación que he disfrutado desde el momento 1 de la construcción. 
-                    Me ha desafiado muchas veces, pero mas son las que he sentido satisfacción de poder ver 
+                <P> <b>Rick & Morty</b> es una aplicación que he disfrutado desde el momento uno de su desarrollo. 
+                    Me ha desafiado muchas veces, pero más son las que he sentido satisfacción de poder ver de 
                     lo que soy capaz de aprender y aplicar.</P>
 
-                <P> Esta aplicación se fue construyendo de la mano con cada tema que íbamos aprendiendo en el 
+                <P> Esta aplicación se fué construyendo de la mano con cada tema que íbamos aprendiendo en el 
                 <a tittle="perfil" href="https://www.soyhenry.com/" target="_blank" rel="noreferrer" style={{color: 'black', textDecoration: 'none'}}><b> Bootcamp de Soy Henry</b></a> en el modulo de <b>Front-End</b>. Cada tarea nos daba como desafío poder 
                     aplicar lo aprendido en esta aplicación.</P>
                 
@@ -55,7 +55,7 @@ export default function About(){
                     random el cual selecciona aleatoriamente un personaje mediante un ID o a traves del input en el cual puedes 
                     escribir el ID de un personaje deseado entre el 1 y el 826 (que son los personajes que nos brinda la API). 
                     Adicionalmente puedes ver información mas detallada de cada personaje haciendo clic en 
-                    su nombre.</P>
+                    su nombre y puedes anexarlo a una lista de favoritos.</P>
 
                 <P> Este App quedará siempre como el recuerdo de esa primera aplicación que desarrollas, traerá 
                     nostalgia y buenos recuerdos cuando en unos años mas adelante veas todo de lo que has sido capaz.</P>

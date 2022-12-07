@@ -47,20 +47,23 @@ const Button = styled.button`
 `;
 
 const DivSpec = styled.div`
-    color: #16315b;
+    color: #4e4e4e;
 `;
 
 const DivImg = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    border-radius: 10px;
     width: 320px;
+    border-radius: 25px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
 `;
 
 const Img = styled.img`
-     border-radius: 3px;
+     border-radius: 15px;
+     width: 290px;
 `;
 
 const Detail = () => {
@@ -127,4 +130,4 @@ const Detail = () => {
 
 }
 
-export default Detail;
+export default Detail;  

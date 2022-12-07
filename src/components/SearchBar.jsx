@@ -88,7 +88,7 @@ export default function SearchBar(props) {
    return (
       <DivAdd>
          <InputAdd type='search' placeholder="Type a number from 1 to 826" onChange={handleChange} name="search" id=""/>
-         <BtnAdd onClick={() => props.onSearch(character)}>Agregar</BtnAdd>
+         <BtnAdd onClick={() => props.onSearch(character)}>Add</BtnAdd>
          <BtnAdd onClick={() => props.onSearch(Math.floor(Math.random()*826))}>Random</BtnAdd>
          <BtnAddF to="/favorites">Favorites ❤️</BtnAddF>
          <BtnAdd onClick={props.logout}>Logout</BtnAdd>
