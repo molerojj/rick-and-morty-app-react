@@ -25,7 +25,8 @@ const initialState = {
                 const filterCharacters = action.payload === "ALL" ? characters : characters.filter(e => e.gender === action.payload)
                 return {
                     ...state,
-                    myFavorites: filterCharacters
+                    myFavorites: filterCharacters,
+                    allCharacters: characters
                 }
 
             case ORDER:
