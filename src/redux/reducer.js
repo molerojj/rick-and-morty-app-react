@@ -26,7 +26,6 @@ const initialState = {
                 return {
                     ...state,
                     myFavorites: filterCharacters,
-                    allCharacters: characters
                 }
 
             case ORDER:
