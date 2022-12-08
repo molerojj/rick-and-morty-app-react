@@ -21,15 +21,15 @@ const initialState = {
              };
 
              case FILTER:
-                const characters = [...state.allCharacters];
-                const filterCharacters = action.payload === "ALL" ? characters : characters.filter(e => e.gender === action.payload)
+                const filterCharacters = 
+                    action.payload === "All" ? state.allCharacters : state.allCharacters.filter((char) => char.gender === action.payload);
                 return {
                     ...state,
                     myFavorites: filterCharacters,
                 }
 
             case ORDER:
-                const copyCharacter = [...state.allCharacters];
+                const copyCharacter = [...state.myFavorites];
                 if(action.payload === "Ascending") {
                     copyCharacter.sort((a, b) => a.id - b.id);
                 } else {

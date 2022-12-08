@@ -61,11 +61,11 @@ const Favorites = ({myFavorites, onClose}) => {
                     <option value="Descending">Descending</option>
                 </Select>
                 <Select onChange={(e) => dispatch(filterCards(e.target.value))}>
+                    <option value="All">All</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Genderless">Genderless</option>
-                    <option value="Unknown">Unknown</option>
-                    <option value="All">All</option>
+                    <option value="unknown">Unknown</option>
                 </Select>
             </DivSelectors>
         <DivFavs>
