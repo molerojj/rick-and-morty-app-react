@@ -5,15 +5,24 @@ import { Link } from 'react-router-dom'
 
 const NavBar = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    position:fixed;
+    position: relative;
     top: 0;
     background: #e8e8e8;
     border: 1px solid #e8e8e8;
     transition: all .3s;
     box-shadow: 6px 6px 12px #c5c5c5,
                -6px -6px 12px #ffffff;
+
+    @media screen and (max-width: 768px) {
+        justify-content: center;
+    }
+    
+    @media screen and (max-width: 700px) {
+        justify-content: center;
+    }
 `;
 
 const HomeAbout = styled.div`
@@ -43,6 +52,8 @@ const NavHome = styled(Link)`
                   -4px -4px 12px #ffffff;
    }
 `;
+
+
 
 export default function Nav (props){
     return(

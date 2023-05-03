@@ -6,11 +6,11 @@ import { useDispatch } from 'react-redux';
 import { filterCards, orderCards } from '../redux/actions/actions';
 
 const DivFavs = styled.div`
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   padding: 0px 50px;
-   margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0px 50px;
+    margin: 0;
 `;
 
 const H1Fav = styled.h1`
@@ -70,14 +70,14 @@ const Favorites = ({myFavorites, onClose}) => {
             </DivSelectors>
         <DivFavs>
             {myFavorites.map((fav, index) => (<Card 
-               key={index}
-               name={fav.name}
-               species={fav.species}
-               gender={fav.gender}
-               image={fav.image}
-               id={fav.id}
-               onClose={onClose}
-             />))}
+                key={index}
+                name={fav.name}
+                species={fav.species}
+                gender={fav.gender}
+                image={fav.image}
+                id={fav.id}
+                onClose={onClose}
+            />))}
         </DivFavs>
         </>
     )

@@ -5,33 +5,44 @@ import styled from 'styled-components';
 const DivDetail = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 110px;
-    padding: 20px;
+    margin-top: 30px;
+    padding: 30px;
     width: 70%;
     height: 450px;
     border-radius: 30px;
     background: #e0e0e0;
     box-shadow: 15px 15px 30px #bebebe,
-               -15px -15px 30px #ffffff;
+                -15px -15px 30px #ffffff;
 `;
 
 const DivSpecImg = styled.div`
     display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+    
+    @media screen and (max-width: 700px) {
+        flex-direction: column;
+    }
+`;
 
-    justify-content: space-around;
+const DivButton = styled.div`
+    display: flex;
+    justify-content: end;
 `;
 
 const Button = styled.button`
     font-family: 'Poppins', sans-serif;
     width: 55px;
-    margin: -30px 0px 20px 90%;
     color: #090909;
     padding: 0.4em 0.8em;
     font-size: 18px;
     border-radius: 0.5em;
     background: #e8e8e8;
     border: 1px solid #e8e8e8;
+
     transition: all .3s;
     box-shadow: 6px 6px 12px #c5c5c5,
                 -6px -6px 12px #ffffff;
@@ -43,11 +54,27 @@ const Button = styled.button`
     &:active {  
         box-shadow: 4px 4px 12px #c5c5c5,
                 -4px -4px 12px #ffffff;
-    } 
+    }
+
+    @media screen and (max-width: 768px) {
+        margin: 0;
+    }
+    
+    @media screen and (max-width: 700px) {
+        margin: 0;
+    }
 `;
 
 const DivSpec = styled.div`
     color: #4e4e4e;
+
+    @media screen and (max-width: 768px) {
+        font-size: 12px;
+    }
+    
+    @media screen and (max-width: 700px) {
+        font-size: 12px;
+    }
 `;
 
 const DivImg = styled.div`
@@ -59,11 +86,31 @@ const DivImg = styled.div`
     background: #e0e0e0;
     box-shadow: 15px 15px 30px #bebebe,
                -15px -15px 30px #ffffff;
+
+    @media screen and (max-width: 768px) {
+        width: 200px;
+        heigth: 200px;
+        margin-left: 60px;
+    }
+    
+    @media screen and (max-width: 700px) {
+        width: 200px;
+        height: 200px;
+        margin-left: 60px;
+    }
 `;
 
 const Img = styled.img`
-     border-radius: 15px;
-     width: 290px;
+    border-radius: 15px;
+    width: 290px;
+
+    @media screen and (max-width: 768px) {
+        width: 160px;
+    }
+    
+    @media screen and (max-width: 700px) {
+        width: 160px;
+    }
 `;
 
 const Detail = () => {
@@ -111,7 +158,9 @@ const Detail = () => {
 
      return (
         <DivDetail>
-            <Button onClick={backToHome}>X</Button>
+            <DivButton>
+                <Button onClick={backToHome}>X</Button>
+            </DivButton>
             <DivSpecImg>
                 <DivSpec>
                     <h1>Name: {character.name}</h1>

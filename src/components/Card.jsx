@@ -61,10 +61,16 @@ const H2name = styled.h2`
 const DivDescription = styled.div`
    color: #4e4e4e;
    display: flex;
-   flex-direction: row;
+   gap: 10px;
+   flex-direction: column;
    justify-content: center;
-   gap: 2rem;
+   align-items: center;
    font-size: 13px;
+   margin: 5px;
+`;
+
+const H2descr = styled.h2`
+   margin: 0;
 `;
 
 const Img = styled.img`
@@ -145,8 +151,8 @@ const Card = ({onClose, id, name, species, gender, image, myFavorites, addFavori
             <H2name>{name}</H2name>
          </NameLink>
          <DivDescription>
-            <h2>{gender}</h2>
-            <h2>{species}</h2>
+            <H2descr>{gender}</H2descr>
+            <H2descr>{species}</H2descr>
          </DivDescription>
       </DivCard>
    );
@@ -154,15 +160,15 @@ const Card = ({onClose, id, name, species, gender, image, myFavorites, addFavori
 
 export const mapStateToProps = (state) => {
    return {
-       myFavorites: state.myFavorites,
+      myFavorites: state.myFavorites,
    } 
 }
 
 export function mapDispatchToProps(dispatch) {
-  return {
-    addFavorite: (favorite) => {dispatch(addFavorite(favorite))},
-    deleteFavorite: (id) => {dispatch(deleteFavorite(id))}
-  };
+   return {
+      addFavorite: (favorite) => {dispatch(addFavorite(favorite))},
+      deleteFavorite: (id) => {dispatch(deleteFavorite(id))}
+   };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);

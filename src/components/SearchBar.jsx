@@ -5,7 +5,17 @@ import { Link } from 'react-router-dom';
 const DivAdd = styled.div`
    margin: 20px;
    display: flex;
+   flex-wrap: wrap;
    justify-content: right;
+   @media screen and (max-width: 768px) {
+      justify-content: center;
+      gap:20px;
+   }
+   
+   @media screen and (max-width: 700px) {
+         justify-content: center;
+         gap:20px;
+   }
 `;
 
 const InputAdd = styled.input`
