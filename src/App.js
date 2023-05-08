@@ -41,6 +41,7 @@ function onSearch(id) {
            window.alert('No hay personajes con ese ID');
         }
      });
+     navigate('/home');
 };
 
 const onClose = (id) => {

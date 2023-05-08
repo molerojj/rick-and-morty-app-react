@@ -27,7 +27,7 @@ export default function Cards(props) {
    const { characters, onClose } = props;
    return (
          <>
-            { characters.length >= 1
+            { characters.length > 0
             ? <DivCards>
                   {characters.map((char)=> (
                      <Card 
