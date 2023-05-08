@@ -32,7 +32,7 @@ function onSearch(id) {
      .then((response) => response.json())
      .then((data) => {
         if (data.name) {
-          if (!characters.find(el => el.id==id))
+          if (!characters.find(el => el.id === Number(id)))
             setCharacters((oldChars) => [...oldChars, data]);
           else
             window.alert('El personaje con este ID ya se encuentra agregado');
