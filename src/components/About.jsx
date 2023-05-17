@@ -11,13 +11,20 @@ const H2about = styled.h2`
 const DivAbout = styled.div`
     margin-bottom: 20px;
     display: flex;
-    border-radius: 20px;
     width: 85%;
     justify-content: space-between;
     border-radius: 30px;
     background: #e0e0e0;
-     box-shadow: 15px 15px 30px #bebebe,
-               -15px -15px 30px #ffffff;
+    box-shadow: 15px 15px 30px #bebebe,
+                -15px -15px 30px #ffffff;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+        
+    @media screen and (max-width: 700px) {
+        flex-direction: column;
+    }
 `;
 
 const DivP = styled.div`
@@ -27,12 +34,28 @@ const DivP = styled.div`
 const P = styled.p`
     font-size: 13px;
     color: #484848;
+    @media screen and (max-width: 768px) {
+        text-align: justify;
+        padding-left: 30px;
+    }
+    
+    @media screen and (max-width: 700px) {
+        text-align: justify;
+        padding-left: 30px;
+    }
 `;
 
 const Img = styled.img`
     margin-top: 35px;
     width: 350px;
     height: 350px;
+    @media screen and (max-width: 768px) {
+        padding-left: 30px;
+    }
+    
+    @media screen and (max-width: 700px) {
+        padding-left: 30px;
+    }
 `;
 
 export default function About(){
