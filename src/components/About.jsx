@@ -49,13 +49,6 @@ const Img = styled.img`
     margin-top: 35px;
     width: 350px;
     height: 350px;
-    @media screen and (max-width: 768px) {
-        padding-left: 30px;
-    }
-    
-    @media screen and (max-width: 700px) {
-        padding-left: 30px;
-    }
 `;
 
 export default function About(){
